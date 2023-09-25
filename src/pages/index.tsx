@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useState, useEffect} from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import RouterPages from '../router/pages/page';
 import Menu from '../components/menu';
