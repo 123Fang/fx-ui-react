@@ -13,12 +13,14 @@ export default function CodeView(props: codeVoewProps) {
   const [code, setCode] = useState('');
   const [openCode, setOpenCode] = useState(showCode || false);
   const filePath = `/src/demo/${path}.tsx?raw`;
+
   useEffect(() => {
     const s = import(/* @vite-ignore */ filePath);
     s.then((res) => {
       setCode(res.default);
     });
   }, [filePath]);
+
   useEffect(() => {
     // 配置 highlight.js
     hljs.configure({
@@ -48,6 +50,7 @@ export default function CodeView(props: codeVoewProps) {
       });
     }, 500);
   }, []);
+
   const copyCode = () => {
     inputRef.current.value = code;
     inputRef.current.select();
@@ -60,7 +63,7 @@ export default function CodeView(props: codeVoewProps) {
   }
   return (
     <>
-      <div className="mzl-react-ui-codeview" style={{ height: openCode ? 'auto' : '0px' }}>
+      <div className="fx-react-ui-codeview" style={{ height: openCode ? 'auto' : '0px' }}>
         <pre>
           <code>{code}</code>
         </pre>

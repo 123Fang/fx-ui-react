@@ -7,12 +7,14 @@
     "skipLibCheck": true, // 跳过类型检查库文件
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true, // 允许导入 JSON 文件作为模块
     "isolatedModules": true, // 每个文件都是独立的模块
     "noEmit": true, // 不生成JS文件
     "jsx": "react-jsx", // SX 的处理方式为 React
+
+    "allowSyntheticDefaultImports": true,
 
     /* Linting */
     "strict": true,

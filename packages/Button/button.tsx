@@ -6,24 +6,25 @@ export type ButtonProps = {
   style?: CSSProperties;
   className?: string;
   children?: React.ReactNode;
+  type?: 'default' | 'primary' | 'success' | 'warning' | 'error' | 'info' | 'link' | 'text';
 };
 function Button(props: ButtonProps): JSX.Element {
-  const { style, className, children } = props;
-  const prefixClsChild = 'button-inner';
-  const cls1 = classNames({
-    [prefixClsChild]: true,
+  const { style, className, children, type } = props;
+  const btnClass = classNames({
+    'fx_btn': true,
+    [`fx_btn_${type}`]: true,
     [className || '']: !!className,
   });
   return (
-    <button className={cls1} style={style || undefined}>
+    <button className={btnClass} style={style || undefined}>
       <span>{children}</span>
     </button>
   );
 }
-
 Button.defaultProps = {
   style: '',
   className: '',
   children: null,
+  type: 'default',
 };
 export default Button;
