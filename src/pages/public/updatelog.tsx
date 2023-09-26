@@ -46,6 +46,30 @@ export default function UpdateLog() {
           content: ['动态导入组件', '图片资源', '.d.ts类型声明文件']
         }
       ],
+    },
+    {
+      version: '0.0.4',
+      time: '2023-09-26',
+      log: [
+        {
+          title: '优化',
+          content: ['完善组件文档首页部分', 'Button组件编写完善'],
+        },
+        {
+          title: '修复',
+          content: ['解决ts报错问题']
+        }
+      ],
+    },
+    {
+      version: '0.0.5',
+      time: '2023-09-27',
+      log: [
+        {
+          title: '优化',
+          content: ['Button组件编写完善']
+        }
+      ]
     }
   ])
   return (

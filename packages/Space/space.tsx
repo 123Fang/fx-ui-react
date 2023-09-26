@@ -7,21 +7,26 @@ export type SpaceProps = {
   className?: string;
   children: React.ReactNode;
   direction?: 'horizontal' | 'vertical';
-  gap?: string
+  gap?: string;
+  align?: string;
 };
 function Space(props: SpaceProps): JSX.Element {
-  const { style, className, children, direction, gap } = props;
+  const { style, className, children, direction, gap, align } = props;
   const spaceClass = classNames({
-    'fx_space': true,
+    fx_space: true,
     [className || '']: !!className,
   });
   const spaceStyle = {
     ...style,
-    'flexFlow': direction === 'vertical' ? 'column wrap' : 'wrap',
-    'gap': gap || '10px 10px',
-  }
+    flexFlow: direction === 'vertical' ? 'column wrap' : 'wrap',
+    gap: gap,
+    alignItems: direction === 'vertical' ? align : 'baseline',
+    justifyContent: direction === 'horizontal' ? align : 'baseline',
+  };
   return (
-    <div className={spaceClass} style={style || spaceStyle}>{children}</div>
+    <div className={spaceClass} style={style || spaceStyle}>
+      {children}
+    </div>
   );
 }
 Space.defaultProps = {
@@ -29,5 +34,6 @@ Space.defaultProps = {
   className: '',
   direction: 'horizontal',
   gap: '10px 10px',
+  align: 'baseline',
 };
 export default Space;

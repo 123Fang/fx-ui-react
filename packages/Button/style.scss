@@ -1,7 +1,7 @@
 .fx_btn {
   line-height: 1.5715;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   font-weight: 400;
   white-space: nowrap;
   text-align: center;
@@ -9,24 +9,26 @@
   border: 1px solid transparent;
   box-shadow: 0 2px $btn-shadow-base;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all .3s cubic-bezier(.645, .045, .355, 1);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   touch-action: manipulation;
-  height: 34px;
-  padding: 5px 15px;
-  font-size: $font-size-base;
+  height: 32px;
+  padding: 4px 15px;
+  font-size: $button-base-font-size;
   border-radius: 2px;
   color: $text-color;
   border-color: rgba(0, 0, 0, 0);
   background: #fff;
+  gap: 0 5px;
+  justify-content: center;
 
   &:hover {
     color: $primary-color;
     border-color: $primary-color;
-    opacity: 0.8;
+    opacity: .75;
   }
 
   &:active {
@@ -50,7 +52,7 @@
   border-color: $primary-color;
 
   &:hover {
-    color: #fff;
+    color: #fff
   }
 }
 
@@ -100,8 +102,11 @@
 
 .fx_btn_link {
   background-color: rgba(0, 0, 0, 0);
+  ;
   color: $primary-color;
   border-color: rgba(0, 0, 0, 0);
+  ;
+
   &:hover {
     color: $primary-color;
     border-color: rgba(0, 0, 0, 0);
@@ -110,10 +115,78 @@
 
 .fx_btn_text {
   background-color: rgba(0, 0, 0, 0);
+  ;
   color: $text-color;
   border-color: rgba(0, 0, 0, 0);
+  ;
+
   &:hover {
     color: $text-color;
     border-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.fx_btn_large {
+  height: 40px;
+  padding: 6.4px 15px;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+.fx_btn_small {
+  height: 24px;
+  padding: 1px 7px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+.fx_btn_round {
+  border-radius: 32px
+}
+
+.fx_btn_loading {
+  cursor: default;
+  opacity: .75;
+
+  &:hover,
+  &:active {
+    opacity: .75;
+  }
+}
+
+.fx_btn_disabled {
+  color: $disabled-text-color;
+  border-color: $btn-border-color;
+  background: $disabled-background-color;
+  text-shadow: none;
+  box-shadow: none;
+  opacity: 1;
+  cursor: no-drop;
+
+  &:hover,
+  &:active {
+    color: $disabled-text-color;
+    border-color: $btn-border-color;
+    background: $disabled-background-color;
+    opacity: 1;
+  }
+}
+
+.fx_btn_disabled_link,
+.fx_btn_disabled_text {
+  color: $disabled-text-color;
+  background: none;
+  border-color: rgba(0, 0, 0, 0);
+  text-shadow: none;
+  box-shadow: none;
+  opacity: 1;
+  cursor: no-drop;
+
+  &:hover,
+  &:active {
+    color: $disabled-text-color;
+    border-color: rgba(0, 0, 0, 0);
+    background: none;
+    opacity: 1;
   }
 }
