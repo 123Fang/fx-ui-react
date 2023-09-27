@@ -1,0 +1,81 @@
+// @import '../../src/styles/global.scss';
+.fx_input_inner,
+.fx_input_inner_error,
+.fx_input_inner_warning {
+	display: inline-flex;
+	width: 100%;
+	align-items: center;
+	transition: all .3s;
+	border: 1px solid $input-border-color;
+	padding: 0 10px;
+	box-sizing: border-box;
+	justify-content: center;
+	height: 36px;
+	color: $text-color;
+	overflow: hidden;
+
+	.fx_input {
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		font-size: 14px;
+		transition: all .3s;
+		outline: none;
+		border: none;
+		padding: 0;
+		box-sizing: border-box;
+		line-height: 1.5714285714285714;
+		list-style: none;
+	}
+
+	.fx_input::placeholder {
+		color: $disabled-color;
+	}
+
+	.fx_input_clearable {
+		cursor: pointer;
+	}
+}
+
+.fx_input_inner:hover {
+	border: 1px solid $border-color-hover;
+}
+
+.fx_input_inner:focus-within {
+	border: 1px solid $border-color-hover;
+	box-shadow: 0 0 0 1px $input-color-outline-shadow;
+}
+
+.fx_input_inner_error {
+	border: 1px solid $error-color;
+
+	i {
+		color: $error-color;
+	}
+}
+
+.fx_input_inner_error:hover {
+	border: 1px solid $error-color;
+}
+
+.fx_input_inner_error:focus-within {
+	border: 1px solid $error-color;
+	box-shadow: $input-color-error-shadow;
+}
+
+.fx_input_inner_warning {
+	border: 1px solid $warning-color;
+
+	i {
+		color: $warning-color;
+	}
+}
+
+.fx_input_inner_warning:hover {
+	border: 1px solid $warning-color;
+}
+
+.fx_input_inner_warning:focus-within {
+	border: 1px solid $warning-color;
+	box-shadow: $input-color-warning-shadow;
+}

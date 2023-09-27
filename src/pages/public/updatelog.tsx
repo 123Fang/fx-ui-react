@@ -70,6 +70,16 @@ export default function UpdateLog() {
           content: ['Button组件编写完善']
         }
       ]
+    },
+    {
+      version: '0.0.6',
+      time: '2023-09-27',
+      log: [
+        {
+          title: '新增',
+          content: ['tag,message,input 组件']
+        }
+      ]
     }
   ])
   return (
