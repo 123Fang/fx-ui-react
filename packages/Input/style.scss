@@ -32,7 +32,15 @@
 		color: $disabled-color;
 	}
 
-	.fx_input_clearable {
+  .fx_input_prefix {
+		margin-right: 4px;
+	}
+
+	.fx_input_suffix {
+		margin-left: 4px;
+	}
+
+	.fx_input_clearable, .fx_input_password {
 		cursor: pointer;
 	}
 }
