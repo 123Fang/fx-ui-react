@@ -80,6 +80,16 @@ export default function UpdateLog() {
           content: ['tag,message,input 组件']
         }
       ]
+    },
+    {
+      version: '0.0.7',
+      time: '2023-09-27',
+      log: [
+        {
+          title: '完善 & 新增',
+          content: ['完善input组件','新增 swiper,textArea 组件']
+        }
+      ]
     }
   ])
   return (
