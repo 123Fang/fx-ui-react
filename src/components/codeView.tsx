@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import hljs from 'highlight.js';
+const isDev = import.meta.env.MODE === "development";
+
 
 export type codeVoewProps = {
   path: string;
@@ -9,17 +11,32 @@ export type codeVoewProps = {
 };
 export default function CodeView(props: codeVoewProps) {
   const { path, showView, showCopy, showCode } = props;
+  console.log('path', path)
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [code, setCode] = useState('');
   const [openCode, setOpenCode] = useState(showCode || false);
-  const filePath = `/src/demo/${path}.tsx?raw`;
 
   useEffect(() => {
-    const s = import(/* @vite-ignore */ filePath);
-    s.then((res) => {
-      setCode(res.default);
-    });
-  }, [filePath]);
+    /**
+     *  开发环境：走vite开发服务器来处理
+     *  生产环境: 依赖AST，会把动态import中的变量匹配成glob通配符,然后1去把匹配到的文件打包成独立的chunk,2 再生成一个url映射 3 用请求替换import 
+     * 
+     * **/
+    if (isDev) {
+      const filePath = `/src/demo/${path}.tsx?raw`;
+      const s = import(/* @vite-ignore */ filePath);
+      s.then((res) => {
+        setCode(res.default);
+      });
+    } else {
+      const [p1, p2] = path.split('/')
+      // 遇到?raw，vite的插件来处理
+      const s = import(/* @vite-ignore */ `../demo/${p1}/${p2}.tsx?raw`);
+      s.then((res) => {
+        setCode(res.default);
+      });
+    }
+  }, []);
 
   useEffect(() => {
     // 配置 highlight.js

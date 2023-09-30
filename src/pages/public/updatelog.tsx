@@ -90,6 +90,16 @@ export default function UpdateLog() {
           content: ['完善input组件','新增 swiper,textArea 组件']
         }
       ]
+    },
+    {
+      version: '0.0.8',
+      time: '2023-09-27',
+      log: [
+        {
+          title: '修复',
+          content: ['修复文档生产打包bug']
+        }
+      ]
     }
   ])
   return (

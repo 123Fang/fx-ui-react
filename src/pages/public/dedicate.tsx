@@ -1,10 +1,10 @@
 import React from "react";
 import Title from '../../components/title';
-import InstanceView from '../../layout/instanceView';
+// import InstanceView from '../../layout/instanceView';
 
 export default function Dedicate() {
   return <div className="dedicateInner">
-    <Title title="贡献指南" notes="" desc="目前正在 coding 中， 有兴趣的小伙伴可以一起参与共建！" />
+    <Title title="贡献指南" notes="" desc="目前正在 coding中， 有兴趣的小伙伴可以一起参与共建！" />
     <p className="line1">Github：<a href="https://github.com/123Fang/fx-ui-react" target="_back">https://github.com/123Fang/fx-ui-react</a> </p>
     <div className="line2">
       <p className="line2Title">问题反馈</p>
@@ -17,14 +17,14 @@ export default function Dedicate() {
       <li className="line-li">组件文档暂时需要提供 md 文件，包括（使用方式、演示、配置项、事件 API、插槽说明…）。</li>
       <li className="line-li">PR 提交流程示例：</li>
       <div className="dedicateCode">
-        <InstanceView
+        {/* <InstanceView
           subtitle=""
           isDemo={false}
           showCopy={false}
           showView={false}
           showCode
           path="dedicateExample"
-        />
+        /> */}
       </div>
     </div>
     <div className="line2">

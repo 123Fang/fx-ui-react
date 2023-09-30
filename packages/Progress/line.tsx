@@ -1,4 +1,3 @@
-import React from 'react';
 import type { ProgressProps } from './progress';
 
 interface LineProps extends ProgressProps {

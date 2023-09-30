@@ -1,14 +1,15 @@
 {
   "name": "fx-ui-react",
   "private": true,
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "build:doc": "vite build --config ./build/build.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "new": "node ./scripts/create.js create"
   },
   "dependencies": {
     "@rollup/plugin-typescript": "^8.3.4",
@@ -17,11 +18,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
-    "sass": "^1.54.1"
+    "sass": "^1.54.1",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "@types/node": "^20.7.0",
     "@types/react": "^18.2.15",
+    "@types/events": "^3.0.0",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
