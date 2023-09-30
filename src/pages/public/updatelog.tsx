@@ -110,6 +110,16 @@ export default function UpdateLog() {
           content: ['集成script命令，自动生成组件模版,入口文件，组件库文档demo页面']
         }
       ]
+    },
+    {
+      version: '0.1.0',
+      time: '2023-09-30',
+      log: [
+        {
+          title: '新增',
+          content: ['使用 pnpm new 创建 confirm 组件']
+        }
+      ]
     }
   ])
   return (
