@@ -93,11 +93,21 @@ export default function UpdateLog() {
     },
     {
       version: '0.0.8',
-      time: '2023-09-27',
+      time: '2023-09-30',
       log: [
         {
           title: '修复',
           content: ['修复文档生产打包bug']
+        }
+      ]
+    },
+    {
+      version: '0.0.9',
+      time: '2023-09-30',
+      log: [
+        {
+          title: '新增',
+          content: ['集成script命令，自动生成组件模版,入口文件，组件库文档demo页面']
         }
       ]
     }

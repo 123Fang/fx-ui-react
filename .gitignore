@@ -14,7 +14,6 @@ dist-ssr
 
 # for test
 test
-scripts
 
 # Editor directories and files
 .vscode/*
