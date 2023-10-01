@@ -40,7 +40,7 @@ export default function Dedicate() {
       <li className="line-li">提交 PR 前请 rebase，确保 commit 记录的整洁。</li>
       <li className="line-li">确保 PR 是提交到 dev 分支，而不是 main 分支。</li>
       <li className="line-li">如果是修复 bug，请在 PR 中给出描述信息。</li>
-      <li className="line-li">打包网页文件包命令为 yarn build:html 或 npm run build:html</li>
+      <li className="line-li">打包网页文件包命令为 yarn build:doc 或 npm run build:doc</li>
     </div>
     <div className="line2">
       <p className="line2Title">开发环境</p>
