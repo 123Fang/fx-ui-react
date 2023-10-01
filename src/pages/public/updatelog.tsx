@@ -120,6 +120,16 @@ export default function UpdateLog() {
           content: ['使用 pnpm new 创建 confirm 组件']
         }
       ]
+    },
+    {
+      version: '0.1.1',
+      time: '2023-10-01',
+      log: [
+        {
+          title: '优化',
+          content: ['优化 script/gc.js ']
+        }
+      ]
     }
   ])
   return (
