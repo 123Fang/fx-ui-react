@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import {useState, useEffect, useRef} from 'react'
+import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
 import RouterPages from '../../router/pages/page';
 import Menu from '../../components/menu';
 import '../../styles/custom.scss'
@@ -8,42 +8,57 @@ import '../../styles/custom.scss'
 // 二级路由
 export default function Index() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const contentRef = useRef<HTMLDivElement>(null);
   const [routerPage] = useState<any>(RouterPages[1].children || []);
-  const [menuList] = useState<any>([routerPage[0], ...routerPage[1].children]);
+  const [menuList] = useState<any>([routerPage[0], routerPage[2], ...routerPage[1].children]);
   const [menuData, setMenuData] = useState<any>([]);
-  const [menuIndex, setMenuIndex] = useState<number>(
+  const [menuIndex, setMenuIndex] = useState<any>(
     sessionStorage.getItem('menuIndex')
-      ? Number(sessionStorage.getItem('menuIndex'))
-      : 0 || 0,
+      ? sessionStorage.getItem('menuIndex')
+      : '0-0' || '0-0'
   );
+  // todo: fix for async controll
   useEffect(() => {
-    // 遍历menuList将group相同的放到一起整理成一个数组
+    // 遍历menuList排除group===undefined的其他group相同的数据分组，放在同一个数组
     const arr: Array<any> = [];
-    menuList.forEach((item: any) => {
-      const obj = arr.find((item1) => item1.group === item.group);
-      if (obj) {
-        obj.children.push(item);
-      } else {
-        arr.push({
-          group: item.group,
-          children: [item],
-        });
-      }
-    });
-    setMenuData(arr);
+    setTimeout(() => {
+      menuList.forEach((item: any) => {
+        const obj = arr.find((item1) => item1.group === item.group);
+        if (obj) {
+          obj.children.push(item);
+        } else {
+          arr.push({
+            group: item.group,
+            children: [item],
+          });
+        }
+      });
+      setTimeout(() => {
+        setMenuData(arr);
+      }, 150);
+    }, 250);
   }, [menuList]);
-  const menuClick = () => {
-    console.log(1111);
-  };
+
   const handlerClick = (item: object, v: any, index: any) => {
     setMenuIndex(index);
     navigate(v.router);
     sessionStorage.setItem('menuIndex', index);
   };
+
+  useEffect(() => {
+    setMenuIndex(
+      sessionStorage.getItem('menuIndex')
+        ? sessionStorage.getItem('menuIndex')
+        : '0-0'
+    );
+    (contentRef.current as HTMLDivElement).scrollTop = 0;
+  }, [location.pathname]);
+
   return (
     <div className="layoutBox">
       <div className="menuBox">
-        <Menu menuClick={menuClick} />
+        <Menu/>
       </div>
       <div className="RouterViewInnerBox">
         <div className="leftMenuBox">
@@ -56,8 +71,8 @@ export default function Index() {
                       ? item.children.map((v: any, i: number) => (
                           <li
                             key={i}
-                            className={menuIndex === index + i ? 'active' : ''}
-                            onClick={() => handlerClick(item, v, index + i)}
+                            className={ menuIndex === `${index}-${i}` ? 'active' : ''}
+                            onClick={() => handlerClick(item, v, `${index}-${i}`)}
                           >
                             {v.name}
                           </li>
@@ -68,7 +83,7 @@ export default function Index() {
               ))
             : null}
         </div>
-        <div className="contentBox">
+        <div className="contentBox" ref={contentRef}>
           <Routes>
             {routerPage.map((item: any, index: number) => (
               <Route path={item.path} element={item.element} key={index} />

@@ -130,6 +130,20 @@ export default function UpdateLog() {
           content: ['优化 script/gc.js ']
         }
       ]
+    },
+    {
+      version: '0.1.2',
+      time: '2023-10-03',
+      log: [
+        {
+          title: '完善',
+          content: ['loading, message, confirm, input 添加到组件文档 demo 中']
+        },
+        {
+          title: '修复',
+          content: ['在生成组件文档脚本中，添加“反馈”组件分类']
+        }
+      ]
     }
   ])
   return (
