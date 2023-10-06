@@ -144,6 +144,20 @@ export default function UpdateLog() {
           content: ['在生成组件文档脚本中，添加“反馈”组件分类']
         }
       ]
+    },
+    {
+      version: '0.1.3',
+      time: '2023-10-06',
+      log: [
+        {
+          title: '新增',
+          content: ['新增 table,empty 组件']
+        },
+        {
+          title: '完善',
+          content: ['完整组件库文档 table, empty 的 demo展示']
+        }
+      ]
     }
   ])
   return (

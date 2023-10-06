@@ -1,11 +1,13 @@
 export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as Confirm } from './Confirm';
+export { default as Empty } from './Empty';
 export { default as Input } from './Input';
 export { default as Loading } from './Loading';
 export { default as Message } from './Message';
 export { default as Progress } from './Progress';
 export { default as Space } from './Space';
 export { default as Swiper } from './Swiper';
+export { default as Table } from './Table';
 export { default as Tag } from './Tag';
 export { default as TextArea } from './TextArea';
