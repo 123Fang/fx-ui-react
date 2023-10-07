@@ -172,6 +172,16 @@ export default function UpdateLog() {
           content: ['完整组件库文档展示']
         }
       ]
+    },
+    {
+      version: '0.1.5',
+      time: '2023-10-07',
+      log: [
+        {
+          title: '修复',
+          content: ['修复完善 notification 组件样式']
+        }
+      ]
     }
   ])
   return (
