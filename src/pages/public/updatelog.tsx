@@ -158,6 +158,20 @@ export default function UpdateLog() {
           content: ['完整组件库文档 table, empty 的 demo展示']
         }
       ]
+    },
+    {
+      version: '0.1.4',
+      time: '2023-10-07',
+      log: [
+        {
+          title: '新增',
+          content: ['新增 popover,notification 组件']
+        },
+        {
+          title: '完善',
+          content: ['完整组件库文档展示']
+        }
+      ]
     }
   ])
   return (

@@ -5,6 +5,8 @@ export { default as Empty } from './Empty';
 export { default as Input } from './Input';
 export { default as Loading } from './Loading';
 export { default as Message } from './Message';
+export { default as Notification } from './Notification';
+export { default as Popover } from './Popover';
 export { default as Progress } from './Progress';
 export { default as Space } from './Space';
 export { default as Swiper } from './Swiper';
