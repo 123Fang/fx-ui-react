@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
+import {Button,Space} from '../../../packages'
 
 
 export default function Index() {
@@ -41,8 +42,10 @@ export default function Index() {
         <p className="tiBox">React18+TS+Vite，更小，更快，拓展性更强，正在coding中，欢迎一起共建！ </p>
         <div className="contentBoxInnerHome">
           <div className="homeBtnGroup">
-            <button onClick={() => navigate('/docs/index')}>快速开始</button>
-            <button onClick={() => navigate('/docs/index')}>Github</button>
+            <Space  gap="20px">
+              <Button size="large" style={{ width: '120px' }} onClick={() => navigate('/docs/index')}>快速开始</Button>
+              <Button size="large" style={{ width: '120px' }} onClick={() => window.open('https://github.com/123Fang/fx-ui-react')}>Github </Button>
+            </Space>
           </div>
           <div className="compentsdescBoxInner">
             <div className="compentsdescBoxItemInner">

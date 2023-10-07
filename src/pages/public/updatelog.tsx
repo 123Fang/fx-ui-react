@@ -182,6 +182,16 @@ export default function UpdateLog() {
           content: ['修复完善 notification 组件样式']
         }
       ]
+    },
+    {
+      version: '0.1.6',
+      time: '2023-10-07',
+      log: [
+        {
+          title: '修复',
+          content: ['修复完善文档首页']
+        }
+      ]
     }
   ])
   return (
