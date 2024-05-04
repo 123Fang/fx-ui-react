@@ -41,7 +41,7 @@ function Menu(props: MenuProps): JSX.Element {
           <div className="menuinnerBox">
             <div className="leftMenuLogo">
               <div className="logo"  onClick={() => navigate('/')} />
-              <span className="version">0.x.x</span>
+              <span className="version">V0.1.5</span>
             </div>
             <div className="menuitemBox">
               {

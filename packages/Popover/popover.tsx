@@ -155,7 +155,7 @@ function Popover(props: PopoverProps): JSX.Element {
     if (
       visible ||
       ((e.relatedTarget as HTMLElement).parentNode as HTMLElement).className ===
-        'mzl_popover'
+        'fx_popover'
     )
       return;
     closePopover();
@@ -181,7 +181,7 @@ function Popover(props: PopoverProps): JSX.Element {
   return (
     <>
       <div
-        className="mzl_demo_popover"
+        className="fx_demo_popover"
         ref={popoverComponentRef}
         onMouseOver={trigger === 'hover' ? onHoverOpen : undefined}
         onMouseOut={trigger === 'hover' ? onHoverClose : undefined}

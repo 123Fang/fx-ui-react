@@ -20,35 +20,35 @@ export default function InputPage() {
         subnotes=""
         demo={<Demo1 />}
         subdesc="Input 输入框的基本使用"
-        path="Input/demo1"
+        path="input/demo1"
       />
       <InstanceView
         subtitle="可清空的输入框"
         subnotes=""
         demo={<Demo2 />}
         subdesc="通过clearable属性控制是否显示清除按钮"
-        path="Input/demo2"
+        path="input/demo2"
       />
       <InstanceView
         subtitle="配置图标"
         subnotes=""
         demo={<Demo3 />}
         subdesc="通过prefix和suffix属性配置前置和后置图标"
-        path="Input/demo3"
+        path="input/demo3"
       />
       <InstanceView
         subtitle="密码输入框"
         subnotes=""
         demo={<Demo4 />}
         subdesc="密码输入框,通过showPassword属性控制是否显示密码"
-        path="Input/demo4"
+        path="input/demo4"
       />
       <InstanceView
         subtitle="状态校验"
         subnotes=""
         demo={<Demo5 />}
         subdesc="设置status属性为error或warning,会校验输入框的状态"
-        path="Input/demo5"
+        path="input/demo5"
       />
     </div>
   );

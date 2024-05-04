@@ -50,7 +50,7 @@ function Progress<P extends ProgressProps>(props: P): JSX.Element {
   const { className, type } = props;
 
   const clsString = classNames({
-    [`mzl_progress_${type}`]: true,
+    [`fx_progress_${type}`]: true,
     [className || '']: !!className,
   });
 
@@ -61,7 +61,7 @@ function Progress<P extends ProgressProps>(props: P): JSX.Element {
   } else if (type === 'circle') {
     progress = <Circle {...props} className={clsString} />;
   }
-  return <div className="mzl_progress">{progress}</div>;
+  return <div className="fx_progress">{progress}</div>;
 }
 
 Progress.defaultProps = {

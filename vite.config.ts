@@ -32,7 +32,7 @@ export default defineConfig({
           tslib: resolve('typescript'),
           // exclude:['packages/**/*index.ts'],
           outDir: resolvePath('dist'),
-        }),
+        }) as any,
       ],
     },
   },
